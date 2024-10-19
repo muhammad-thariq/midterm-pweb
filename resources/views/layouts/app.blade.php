@@ -15,14 +15,14 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased bg-black from-neutral-50">
         <div class="min-h-screen ">
             @include('layouts.navigation')
 
 
-            <div class="flex justify-center" style="margin-top: 2em;">
+            {{-- <div class="flex justify-center" style="margin-top: 2em;">
                 <img src="{{ url('bit.png') }}" alt="noimage.png" >
-            </div>
+            </div> --}}
 
             <!-- Page Content -->
             <main>

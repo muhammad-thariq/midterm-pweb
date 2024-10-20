@@ -8,13 +8,17 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <div>
-                        <!-- <x-application-logo class="block h-9 w-auto fill-current text-gray-800" /> -->
-                         <img src="{{ url('bit.png') }}" alt="no image" class="h-9">
-                    </div>
-                    <p class="ml-0.5 font-extrabold">
-                        Store.
-                    </p>
+                    <a href="dashboard">
+                        <div>
+                            <!-- <x-application-logo class="block h-9 w-auto fill-current text-gray-800" /> -->
+                            <img src="{{ url('bit.png') }}" alt="no image" class="h-9">
+                        </div>
+                    </a>
+                    <a href="dashboard">
+                        <p class="ml-0.5 font-extrabold">
+                            Store.
+                        </p>
+                    </a>
                 </div>
 
                 <!-- Navigation Links -->

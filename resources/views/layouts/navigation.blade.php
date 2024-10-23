@@ -1,5 +1,5 @@
-{{-- <nav x-data="{ open: false }" class="bg-white border-b border-gray-100"> --}}
-<nav x-data="{ open: false }" class="bg-white border-b fixed top-0 left-0 right-0 z-50">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+{{-- <nav x-data="{ open: false }" class="bg-white border-b fixed top-0 left-0 right-0 z-50"> --}}
 
 
     <!-- Primary Navigation Menu -->

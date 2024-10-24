@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product; // Import the Product model
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -46,5 +47,35 @@ class ProductController extends Controller
         ]);
 
         return redirect()->route('products.index')->with('success', 'Product added successfully!');
+    }
+
+    public function edit(Product $product)
+    {
+        return view('products.edit', compact('product'));
+    }
+
+    public function update(Request $request, Product $product)
+    {
+        $validatedData = $request->validate([
+            'Name' => 'required|string|max:255',
+            'Price' => 'required|numeric'
+        ]);
+
+        $product->Name = $request->Name;
+        $product->Price = str_replace(".","",$request->Price);
+        $product->Description = $request->Description;
+    
+        if($request->file('Photo'))
+        {
+            Storage::disk('local')->delete('', $product->Photo);
+
+            $Photo = $request->file('Photo');
+            $Photo->storeAs('', $Photo->hashName());    
+            $product->Photo = $Photo->hashName();
+        }
+
+        $product->update();
+
+        return redirect()->route('products.index')->with('success', 'Update added successfully!');
     }
 }

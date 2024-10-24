@@ -3,7 +3,7 @@
     <x-danger-button
         x-data=""
         x-on:click.prevent="$dispatch('open-modal', 'confirm-delete-product')"
-    >{{ __('Delete Account') }}
+    >{{ __('Delete Product') }}
     </x-danger-button>
 
     <x-modal name="confirm-delete-product" :show="$errors->userDeletion->isNotEmpty()" focusable>
@@ -16,7 +16,7 @@
             </h2>
 
             <p class="mt-1 text-sm text-gray-600">
-                {{ __('Once your account is deleted, all of its resources and data will be permanently deleted.') }}
+                {{ __('Once your Product is deleted, all of its resources and data will be permanently deleted.') }}
             </p>
 
             <div class="mt-6 flex justify-end">
